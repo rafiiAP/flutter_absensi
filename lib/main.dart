@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_absensi/data/datasource/auth_remote_datasource.dart';
 import 'package:flutter_absensi/data/style/style.dart';
-import 'package:flutter_absensi/ui/auth/bloc/login/login_bloc.dart';
+import 'package:flutter_absensi/presentation/auth/bloc/logout/logout_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'ui/auth/pages/splash_page.dart';
+import 'presentation/auth/bloc/login/login_bloc.dart';
+import 'presentation/auth/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +16,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginBloc(AuthRemoteDatasource()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LoginBloc(AuthRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => LogoutBloc(AuthRemoteDatasource()),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Intensive Club batch 16',

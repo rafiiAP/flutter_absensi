@@ -8,67 +8,16 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
-
-class SvgGenImage {
-  const SvgGenImage(this._assetName);
-
-  final String _assetName;
-
-  SvgPicture svg({
-    Key? key,
-    bool matchTextDirection = false,
-    AssetBundle? bundle,
-    String? package,
-    double? width,
-    double? height,
-    BoxFit fit = BoxFit.contain,
-    AlignmentGeometry alignment = Alignment.center,
-    bool allowDrawingOutsideViewBox = false,
-    WidgetBuilder? placeholderBuilder,
-    String? semanticsLabel,
-    bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
-    ColorFilter? colorFilter,
-    Clip clipBehavior = Clip.hardEdge,
-    @deprecated Color? color,
-    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated bool cacheColorFilter = false,
-  }) {
-    return SvgPicture.asset(
-      _assetName,
-      key: key,
-      matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
-      width: width,
-      height: height,
-      fit: fit,
-      alignment: alignment,
-      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
-      placeholderBuilder: placeholderBuilder,
-      semanticsLabel: semanticsLabel,
-      excludeFromSemantics: excludeFromSemantics,
-      theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
-      clipBehavior: clipBehavior,
-      cacheColorFilter: cacheColorFilter,
-    );
-  }
-
-  String get path => _assetName;
-
-  String get keyName => _assetName;
-}
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/attendance.svg
-  SvgGenImage get attendance => const SvgGenImage('assets/icons/attendance.svg');
+  SvgGenImage get attendance =>
+      const SvgGenImage('assets/icons/attendance.svg');
 
   /// File path: assets/icons/back.svg
   SvgGenImage get back => const SvgGenImage('assets/icons/back.svg');
@@ -76,11 +25,15 @@ class $AssetsIconsGen {
   /// File path: assets/icons/email.svg
   SvgGenImage get email => const SvgGenImage('assets/icons/email.svg');
 
+  /// Directory path: assets/icons/menu
   $AssetsIconsMenuGen get menu => const $AssetsIconsMenuGen();
+
+  /// Directory path: assets/icons/nav
   $AssetsIconsNavGen get nav => const $AssetsIconsNavGen();
 
   /// File path: assets/icons/notification_rounded.svg
-  SvgGenImage get notificationRounded => const SvgGenImage('assets/icons/notification_rounded.svg');
+  SvgGenImage get notificationRounded =>
+      const SvgGenImage('assets/icons/notification_rounded.svg');
 
   /// File path: assets/icons/password.svg
   SvgGenImage get password => const SvgGenImage('assets/icons/password.svg');
@@ -89,13 +42,117 @@ class $AssetsIconsGen {
   SvgGenImage get reverse => const SvgGenImage('assets/icons/reverse.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [attendance, back, email, notificationRounded, password, reverse];
+  List<SvgGenImage> get values =>
+      [attendance, back, email, notificationRounded, password, reverse];
+}
+
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/bg_home.png
+  AssetGenImage get bgHome => const AssetGenImage('assets/images/bg_home.png');
+
+  /// File path: assets/images/failed.png
+  AssetGenImage get failed => const AssetGenImage('assets/images/failed.png');
+
+  /// File path: assets/images/img_my_location.png
+  AssetGenImage get imgMyLocation =>
+      const AssetGenImage('assets/images/img_my_location.png');
+
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
+  /// File path: assets/images/logo_code_with_bahri.png
+  AssetGenImage get logoCodeWithBahri =>
+      const AssetGenImage('assets/images/logo_code_with_bahri.png');
+
+  /// File path: assets/images/logo_white.png
+  AssetGenImage get logoWhite =>
+      const AssetGenImage('assets/images/logo_white.png');
+
+  /// File path: assets/images/see_location.png
+  AssetGenImage get seeLocation =>
+      const AssetGenImage('assets/images/see_location.png');
+
+  /// File path: assets/images/success.png
+  AssetGenImage get success => const AssetGenImage('assets/images/success.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        bgHome,
+        failed,
+        imgMyLocation,
+        logo,
+        logoCodeWithBahri,
+        logoWhite,
+        seeLocation,
+        success
+      ];
+}
+
+class $AssetsIconsMenuGen {
+  const $AssetsIconsMenuGen();
+
+  /// File path: assets/icons/menu/catatan.svg
+  SvgGenImage get catatan => const SvgGenImage('assets/icons/menu/catatan.svg');
+
+  /// File path: assets/icons/menu/datang.svg
+  SvgGenImage get datang => const SvgGenImage('assets/icons/menu/datang.svg');
+
+  /// File path: assets/icons/menu/izin.svg
+  SvgGenImage get izin => const SvgGenImage('assets/icons/menu/izin.svg');
+
+  /// File path: assets/icons/menu/jadwal.svg
+  SvgGenImage get jadwal => const SvgGenImage('assets/icons/menu/jadwal.svg');
+
+  /// File path: assets/icons/menu/lembur.svg
+  SvgGenImage get lembur => const SvgGenImage('assets/icons/menu/lembur.svg');
+
+  /// File path: assets/icons/menu/pulang.svg
+  SvgGenImage get pulang => const SvgGenImage('assets/icons/menu/pulang.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values =>
+      [catatan, datang, izin, jadwal, lembur, pulang];
+}
+
+class $AssetsIconsNavGen {
+  const $AssetsIconsNavGen();
+
+  /// File path: assets/icons/nav/history.svg
+  SvgGenImage get history => const SvgGenImage('assets/icons/nav/history.svg');
+
+  /// File path: assets/icons/nav/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/icons/nav/home.svg');
+
+  /// File path: assets/icons/nav/profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/icons/nav/profile.svg');
+
+  /// File path: assets/icons/nav/setting.svg
+  SvgGenImage get setting => const SvgGenImage('assets/icons/nav/setting.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [history, home, profile, setting];
+}
+
+class Assets {
+  Assets._();
+
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -166,85 +223,79 @@ class AssetGenImage {
   String get keyName => _assetName;
 }
 
-class $AssetsImagesGen {
-  const $AssetsImagesGen();
+class SvgGenImage {
+  const SvgGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = false;
 
-  /// File path: assets/images/bg_home.png
-  AssetGenImage get bgHome => const AssetGenImage('assets/images/bg_home.png');
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = true;
 
-  /// File path: assets/images/failed.png
-  AssetGenImage get failed => const AssetGenImage('assets/images/failed.png');
+  final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
 
-  /// File path: assets/images/img_my_location.png
-  AssetGenImage get imgMyLocation => const AssetGenImage('assets/images/img_my_location.png');
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    SvgTheme? theme,
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    final BytesLoader loader;
+    if (_isVecFormat) {
+      loader = AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+      );
+    }
+    return SvgPicture(
+      loader,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      colorFilter: colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
 
-  /// File path: assets/images/logo.png
-  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+  String get path => _assetName;
 
-  /// File path: assets/images/logo_code_with_bahri.png
-  AssetGenImage get logoCodeWithBahri => const AssetGenImage('assets/images/logo_code_with_bahri.png');
-
-  /// File path: assets/images/logo_white.png
-  AssetGenImage get logoWhite => const AssetGenImage('assets/images/logo_white.png');
-
-  /// File path: assets/images/see_location.png
-  AssetGenImage get seeLocation => const AssetGenImage('assets/images/see_location.png');
-
-  /// File path: assets/images/success.png
-  AssetGenImage get success => const AssetGenImage('assets/images/success.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values =>
-      [bgHome, failed, imgMyLocation, logo, logoCodeWithBahri, logoWhite, seeLocation, success];
-}
-
-class $AssetsIconsMenuGen {
-  const $AssetsIconsMenuGen();
-
-  /// File path: assets/icons/menu/catatan.svg
-  SvgGenImage get catatan => const SvgGenImage('assets/icons/menu/catatan.svg');
-
-  /// File path: assets/icons/menu/datang.svg
-  SvgGenImage get datang => const SvgGenImage('assets/icons/menu/datang.svg');
-
-  /// File path: assets/icons/menu/izin.svg
-  SvgGenImage get izin => const SvgGenImage('assets/icons/menu/izin.svg');
-
-  /// File path: assets/icons/menu/jadwal.svg
-  SvgGenImage get jadwal => const SvgGenImage('assets/icons/menu/jadwal.svg');
-
-  /// File path: assets/icons/menu/lembur.svg
-  SvgGenImage get lembur => const SvgGenImage('assets/icons/menu/lembur.svg');
-
-  /// File path: assets/icons/menu/pulang.svg
-  SvgGenImage get pulang => const SvgGenImage('assets/icons/menu/pulang.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values => [catatan, datang, izin, jadwal, lembur, pulang];
-}
-
-class $AssetsIconsNavGen {
-  const $AssetsIconsNavGen();
-
-  /// File path: assets/icons/nav/history.svg
-  SvgGenImage get history => const SvgGenImage('assets/icons/nav/history.svg');
-
-  /// File path: assets/icons/nav/home.svg
-  SvgGenImage get home => const SvgGenImage('assets/icons/nav/home.svg');
-
-  /// File path: assets/icons/nav/profile.svg
-  SvgGenImage get profile => const SvgGenImage('assets/icons/nav/profile.svg');
-
-  /// File path: assets/icons/nav/setting.svg
-  SvgGenImage get setting => const SvgGenImage('assets/icons/nav/setting.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values => [history, home, profile, setting];
-}
-
-class Assets {
-  Assets._();
-
-  static const $AssetsIconsGen icons = $AssetsIconsGen();
-  static const $AssetsImagesGen images = $AssetsImagesGen();
+  String get keyName => _assetName;
 }

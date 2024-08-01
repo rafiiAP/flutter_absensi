@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_absensi/presentation/home/pages/setting_page.dart';
 
 import '../../../core/core.dart';
 import 'home_page.dart';
@@ -15,7 +16,7 @@ class _MainPageState extends State<MainPage> {
   final _widgets = [
     const HomePage(),
     const Center(child: Text('This is history page')),
-    const Center(child: Text('This is setting page')),
+    const SettingPage(),
     const Center(child: Text('This is profile page')),
   ];
 

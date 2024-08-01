@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_absensi/ui/auth/bloc/login/login_bloc.dart';
+import 'package:flutter_absensi/data/datasource/auth_local_datasource.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/core.dart';
 import '../../home/pages/main_page.dart';
+import '../bloc/login/login_bloc.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -93,18 +94,19 @@ class _LoginPageState extends State<LoginPage> {
               BlocListener<LoginBloc, LoginState>(
                 listener: (context, state) {
                   state.maybeWhen(
+                    orElse: () {},
                     success: (data) {
-                      return context.pushReplacement(const MainPage());
+                      AuthLocalDatasource().saveAuthData(data);
+                      context.pushReplacement(const MainPage());
                     },
                     error: (error) {
-                      return ScaffoldMessenger.of(context).showSnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(error),
-                          backgroundColor: AppColors.red,
+                          backgroundColor: Colors.red,
                         ),
                       );
                     },
-                    orElse: () {},
                   );
                 },
                 child: BlocBuilder<LoginBloc, LoginState>(
@@ -129,19 +131,6 @@ class _LoginPageState extends State<LoginPage> {
                           child: CircularProgressIndicator(),
                         );
                       },
-                    );
-
-                    return Button.filled(
-                      onPressed: () {
-                        // context.pushReplacement(const MainPage());
-                        context.read<LoginBloc>().add(
-                              LoginEvent.login(
-                                emailController.text,
-                                passwordController.text,
-                              ),
-                            );
-                      },
-                      label: 'Sign In',
                     );
                   },
                 ),
