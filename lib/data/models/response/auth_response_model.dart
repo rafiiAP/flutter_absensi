@@ -22,6 +22,16 @@ class AuthResponseModel {
         "user": user?.toMap(),
         "token": token,
       };
+
+  AuthResponseModel copyWith({
+    User? user,
+    String? token,
+  }) {
+    return AuthResponseModel(
+      user: user ?? this.user,
+      token: token ?? this.token,
+    );
+  }
 }
 
 class User {
@@ -36,8 +46,8 @@ class User {
   final DateTime? updatedAt;
   final dynamic phone;
   final String? role;
-  final String? position;
-  final String? department;
+  final dynamic position;
+  final dynamic department;
   final dynamic faceEmbedding;
   final dynamic imageUrl;
 

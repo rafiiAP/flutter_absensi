@@ -2,10 +2,22 @@ import 'package:flutter_absensi/core/constants/variables.dart';
 import 'package:flutter_absensi/data/models/response/auth_response_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../models/response/user_response_model.dart';
+
 class AuthLocalDatasource {
   Future<void> saveAuthData(AuthResponseModel authData) async {
     final pref = await SharedPreferences.getInstance();
     await pref.setString(Variables.authData, authData.toJson());
+  }
+
+  //update
+  Future<void> updateAuthData(UserResponseModel data) async {
+    final pref = await SharedPreferences.getInstance();
+    final authData = await getAuthData();
+    if (authData != null) {
+      final updatedData = authData.copyWith(user: data.user);
+      await pref.setString(Variables.authData, updatedData.toJson());
+    }
   }
 
   //remove
@@ -17,11 +29,12 @@ class AuthLocalDatasource {
   //get
   Future<AuthResponseModel?> getAuthData() async {
     final pref = await SharedPreferences.getInstance();
-    final authData = pref.getString(Variables.authData);
-    if (authData != null) {
-      return AuthResponseModel.fromJson(authData);
+    final data = pref.getString(Variables.authData);
+    if (data != null) {
+      return AuthResponseModel.fromJson(data);
+    } else {
+      return null;
     }
-    return null;
   }
 
   //isAuth

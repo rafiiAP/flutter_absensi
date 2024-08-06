@@ -1,9 +1,11 @@
 import 'dart:convert';
 
+import 'package:camera/camera.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_absensi/core/constants/variables.dart';
 import 'package:flutter_absensi/data/datasource/auth_local_datasource.dart';
 import 'package:flutter_absensi/data/models/response/auth_response_model.dart';
+import 'package:flutter_absensi/data/models/response/user_response_model.dart';
 import 'package:flutter_absensi/functions/func.dart';
 import 'package:http/http.dart' as http;
 
@@ -59,6 +61,25 @@ class AuthRemoteDatasource {
       return const Right('Success logout');
     } else {
       return const Left("Gagal logout");
+    }
+  }
+
+  Future<Either<String, UserResponseModel>> updateProfileRegisterFace(
+    String embedding,
+  ) async {
+    final authData = await AuthLocalDatasource().getAuthData();
+    final url = Uri.parse('${Variables.baseUrl}/api/update-profile');
+    final request = http.MultipartRequest('POST', url)
+      ..headers['Authorization'] = 'Bearer ${authData?.token}'
+      ..fields['face_embedding'] = embedding;
+
+    final response = await request.send();
+    final responseString = await response.stream.bytesToString();
+
+    if (response.statusCode == 200) {
+      return Right(UserResponseModel.fromJson(responseString));
+    } else {
+      return const Left('Failed to update profile');
     }
   }
 }

@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'presentation/auth/bloc/login/login_bloc.dart';
 import 'presentation/auth/pages/splash_page.dart';
+import 'presentation/home/bloc/update_user_register_face/update_user_register_face_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => LogoutBloc(AuthRemoteDatasource()),
         ),
+        BlocProvider(
+          create: (context) => UpdateUserRegisterFaceBloc(AuthRemoteDatasource()),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
