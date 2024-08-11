@@ -73,8 +73,12 @@ class AuthRemoteDatasource {
       ..headers['Authorization'] = 'Bearer ${authData?.token}'
       ..fields['face_embedding'] = embedding;
 
+    C.showLog('----> request update profile: $url');
+    C.showLog('----> request update profile: $request');
+
     final response = await request.send();
     final responseString = await response.stream.bytesToString();
+    C.showLog('---> response update profile: $responseString');
 
     if (response.statusCode == 200) {
       return Right(UserResponseModel.fromJson(responseString));

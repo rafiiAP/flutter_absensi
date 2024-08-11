@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'update_user_register_face_bloc.dart';
+part of 'is_checkedin_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,66 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$UpdateUserRegisterFaceEvent {
+mixin _$IsCheckedinEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String embedding, XFile? image)
-        updateProfileRegisterFace,
+    required TResult Function() isCheckedin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String embedding, XFile? image)?
-        updateProfileRegisterFace,
+    TResult? Function()? isCheckedin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String embedding, XFile? image)? updateProfileRegisterFace,
+    TResult Function()? isCheckedin,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_UpdateProfileRegisterFace value)
-        updateProfileRegisterFace,
+    required TResult Function(_IsCheckedin value) isCheckedin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateProfileRegisterFace value)?
-        updateProfileRegisterFace,
+    TResult? Function(_IsCheckedin value)? isCheckedin,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_UpdateProfileRegisterFace value)?
-        updateProfileRegisterFace,
+    TResult Function(_IsCheckedin value)? isCheckedin,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UpdateUserRegisterFaceEventCopyWith<$Res> {
-  factory $UpdateUserRegisterFaceEventCopyWith(
-          UpdateUserRegisterFaceEvent value,
-          $Res Function(UpdateUserRegisterFaceEvent) then) =
-      _$UpdateUserRegisterFaceEventCopyWithImpl<$Res,
-          UpdateUserRegisterFaceEvent>;
+abstract class $IsCheckedinEventCopyWith<$Res> {
+  factory $IsCheckedinEventCopyWith(
+          IsCheckedinEvent value, $Res Function(IsCheckedinEvent) then) =
+      _$IsCheckedinEventCopyWithImpl<$Res, IsCheckedinEvent>;
 }
 
 /// @nodoc
-class _$UpdateUserRegisterFaceEventCopyWithImpl<$Res,
-        $Val extends UpdateUserRegisterFaceEvent>
-    implements $UpdateUserRegisterFaceEventCopyWith<$Res> {
-  _$UpdateUserRegisterFaceEventCopyWithImpl(this._value, this._then);
+class _$IsCheckedinEventCopyWithImpl<$Res, $Val extends IsCheckedinEvent>
+    implements $IsCheckedinEventCopyWith<$Res> {
+  _$IsCheckedinEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -91,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$UpdateUserRegisterFaceEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$IsCheckedinEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -105,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'UpdateUserRegisterFaceEvent.started()';
+    return 'IsCheckedinEvent.started()';
   }
 
   @override
@@ -121,8 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String embedding, XFile? image)
-        updateProfileRegisterFace,
+    required TResult Function() isCheckedin,
   }) {
     return started();
   }
@@ -131,8 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String embedding, XFile? image)?
-        updateProfileRegisterFace,
+    TResult? Function()? isCheckedin,
   }) {
     return started?.call();
   }
@@ -141,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String embedding, XFile? image)? updateProfileRegisterFace,
+    TResult Function()? isCheckedin,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -154,8 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_UpdateProfileRegisterFace value)
-        updateProfileRegisterFace,
+    required TResult Function(_IsCheckedin value) isCheckedin,
   }) {
     return started(this);
   }
@@ -164,8 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateProfileRegisterFace value)?
-        updateProfileRegisterFace,
+    TResult? Function(_IsCheckedin value)? isCheckedin,
   }) {
     return started?.call(this);
   }
@@ -174,8 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_UpdateProfileRegisterFace value)?
-        updateProfileRegisterFace,
+    TResult Function(_IsCheckedin value)? isCheckedin,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -185,113 +172,72 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements UpdateUserRegisterFaceEvent {
+abstract class _Started implements IsCheckedinEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$UpdateProfileRegisterFaceImplCopyWith<$Res> {
-  factory _$$UpdateProfileRegisterFaceImplCopyWith(
-          _$UpdateProfileRegisterFaceImpl value,
-          $Res Function(_$UpdateProfileRegisterFaceImpl) then) =
-      __$$UpdateProfileRegisterFaceImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String embedding, XFile? image});
+abstract class _$$IsCheckedinImplCopyWith<$Res> {
+  factory _$$IsCheckedinImplCopyWith(
+          _$IsCheckedinImpl value, $Res Function(_$IsCheckedinImpl) then) =
+      __$$IsCheckedinImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateProfileRegisterFaceImplCopyWithImpl<$Res>
-    extends _$UpdateUserRegisterFaceEventCopyWithImpl<$Res,
-        _$UpdateProfileRegisterFaceImpl>
-    implements _$$UpdateProfileRegisterFaceImplCopyWith<$Res> {
-  __$$UpdateProfileRegisterFaceImplCopyWithImpl(
-      _$UpdateProfileRegisterFaceImpl _value,
-      $Res Function(_$UpdateProfileRegisterFaceImpl) _then)
+class __$$IsCheckedinImplCopyWithImpl<$Res>
+    extends _$IsCheckedinEventCopyWithImpl<$Res, _$IsCheckedinImpl>
+    implements _$$IsCheckedinImplCopyWith<$Res> {
+  __$$IsCheckedinImplCopyWithImpl(
+      _$IsCheckedinImpl _value, $Res Function(_$IsCheckedinImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? embedding = null,
-    Object? image = freezed,
-  }) {
-    return _then(_$UpdateProfileRegisterFaceImpl(
-      null == embedding
-          ? _value.embedding
-          : embedding // ignore: cast_nullable_to_non_nullable
-              as String,
-      freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as XFile?,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$UpdateProfileRegisterFaceImpl implements _UpdateProfileRegisterFace {
-  const _$UpdateProfileRegisterFaceImpl(this.embedding, this.image);
-
-  @override
-  final String embedding;
-  @override
-  final XFile? image;
+class _$IsCheckedinImpl implements _IsCheckedin {
+  const _$IsCheckedinImpl();
 
   @override
   String toString() {
-    return 'UpdateUserRegisterFaceEvent.updateProfileRegisterFace(embedding: $embedding, image: $image)';
+    return 'IsCheckedinEvent.isCheckedin()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UpdateProfileRegisterFaceImpl &&
-            (identical(other.embedding, embedding) ||
-                other.embedding == embedding) &&
-            (identical(other.image, image) || other.image == image));
+        (other.runtimeType == runtimeType && other is _$IsCheckedinImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, embedding, image);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UpdateProfileRegisterFaceImplCopyWith<_$UpdateProfileRegisterFaceImpl>
-      get copyWith => __$$UpdateProfileRegisterFaceImplCopyWithImpl<
-          _$UpdateProfileRegisterFaceImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String embedding, XFile? image)
-        updateProfileRegisterFace,
+    required TResult Function() isCheckedin,
   }) {
-    return updateProfileRegisterFace(embedding, image);
+    return isCheckedin();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String embedding, XFile? image)?
-        updateProfileRegisterFace,
+    TResult? Function()? isCheckedin,
   }) {
-    return updateProfileRegisterFace?.call(embedding, image);
+    return isCheckedin?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String embedding, XFile? image)? updateProfileRegisterFace,
+    TResult Function()? isCheckedin,
     required TResult orElse(),
   }) {
-    if (updateProfileRegisterFace != null) {
-      return updateProfileRegisterFace(embedding, image);
+    if (isCheckedin != null) {
+      return isCheckedin();
     }
     return orElse();
   }
@@ -300,74 +246,62 @@ class _$UpdateProfileRegisterFaceImpl implements _UpdateProfileRegisterFace {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_UpdateProfileRegisterFace value)
-        updateProfileRegisterFace,
+    required TResult Function(_IsCheckedin value) isCheckedin,
   }) {
-    return updateProfileRegisterFace(this);
+    return isCheckedin(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateProfileRegisterFace value)?
-        updateProfileRegisterFace,
+    TResult? Function(_IsCheckedin value)? isCheckedin,
   }) {
-    return updateProfileRegisterFace?.call(this);
+    return isCheckedin?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_UpdateProfileRegisterFace value)?
-        updateProfileRegisterFace,
+    TResult Function(_IsCheckedin value)? isCheckedin,
     required TResult orElse(),
   }) {
-    if (updateProfileRegisterFace != null) {
-      return updateProfileRegisterFace(this);
+    if (isCheckedin != null) {
+      return isCheckedin(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateProfileRegisterFace
-    implements UpdateUserRegisterFaceEvent {
-  const factory _UpdateProfileRegisterFace(
-          final String embedding, final XFile? image) =
-      _$UpdateProfileRegisterFaceImpl;
-
-  String get embedding;
-  XFile? get image;
-  @JsonKey(ignore: true)
-  _$$UpdateProfileRegisterFaceImplCopyWith<_$UpdateProfileRegisterFaceImpl>
-      get copyWith => throw _privateConstructorUsedError;
+abstract class _IsCheckedin implements IsCheckedinEvent {
+  const factory _IsCheckedin() = _$IsCheckedinImpl;
 }
 
 /// @nodoc
-mixin _$UpdateUserRegisterFaceState {
+mixin _$IsCheckedinState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(bool data) success,
     required TResult Function(String message) error,
-    required TResult Function(UserResponseModel user) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(bool data)? success,
     TResult? Function(String message)? error,
-    TResult? Function(UserResponseModel user)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(bool data)? success,
     TResult Function(String message)? error,
-    TResult Function(UserResponseModel user)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -375,43 +309,40 @@ mixin _$UpdateUserRegisterFaceState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UpdateUserRegisterFaceStateCopyWith<$Res> {
-  factory $UpdateUserRegisterFaceStateCopyWith(
-          UpdateUserRegisterFaceState value,
-          $Res Function(UpdateUserRegisterFaceState) then) =
-      _$UpdateUserRegisterFaceStateCopyWithImpl<$Res,
-          UpdateUserRegisterFaceState>;
+abstract class $IsCheckedinStateCopyWith<$Res> {
+  factory $IsCheckedinStateCopyWith(
+          IsCheckedinState value, $Res Function(IsCheckedinState) then) =
+      _$IsCheckedinStateCopyWithImpl<$Res, IsCheckedinState>;
 }
 
 /// @nodoc
-class _$UpdateUserRegisterFaceStateCopyWithImpl<$Res,
-        $Val extends UpdateUserRegisterFaceState>
-    implements $UpdateUserRegisterFaceStateCopyWith<$Res> {
-  _$UpdateUserRegisterFaceStateCopyWithImpl(this._value, this._then);
+class _$IsCheckedinStateCopyWithImpl<$Res, $Val extends IsCheckedinState>
+    implements $IsCheckedinStateCopyWith<$Res> {
+  _$IsCheckedinStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -428,7 +359,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$UpdateUserRegisterFaceStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$IsCheckedinStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -442,7 +373,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'UpdateUserRegisterFaceState.initial()';
+    return 'IsCheckedinState.initial()';
   }
 
   @override
@@ -459,8 +390,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(bool data) success,
     required TResult Function(String message) error,
-    required TResult Function(UserResponseModel user) success,
   }) {
     return initial();
   }
@@ -470,8 +401,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(bool data)? success,
     TResult? Function(String message)? error,
-    TResult? Function(UserResponseModel user)? success,
   }) {
     return initial?.call();
   }
@@ -481,8 +412,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(bool data)? success,
     TResult Function(String message)? error,
-    TResult Function(UserResponseModel user)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -496,8 +427,8 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -507,8 +438,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
   }
@@ -518,8 +449,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -529,7 +460,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements UpdateUserRegisterFaceState {
+abstract class _Initial implements IsCheckedinState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -542,7 +473,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$UpdateUserRegisterFaceStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$IsCheckedinStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -556,7 +487,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'UpdateUserRegisterFaceState.loading()';
+    return 'IsCheckedinState.loading()';
   }
 
   @override
@@ -573,8 +504,8 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(bool data) success,
     required TResult Function(String message) error,
-    required TResult Function(UserResponseModel user) success,
   }) {
     return loading();
   }
@@ -584,8 +515,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(bool data)? success,
     TResult? Function(String message)? error,
-    TResult? Function(UserResponseModel user)? success,
   }) {
     return loading?.call();
   }
@@ -595,8 +526,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(bool data)? success,
     TResult Function(String message)? error,
-    TResult Function(UserResponseModel user)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -610,8 +541,8 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -621,8 +552,8 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -632,8 +563,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -643,8 +574,153 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements UpdateUserRegisterFaceState {
+abstract class _Loading implements IsCheckedinState {
   const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool data});
+}
+
+/// @nodoc
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$IsCheckedinStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$SuccessImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl(this.data);
+
+  @override
+  final bool data;
+
+  @override
+  String toString() {
+    return 'IsCheckedinState.success(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(bool data) success,
+    required TResult Function(String message) error,
+  }) {
+    return success(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(bool data)? success,
+    TResult? Function(String message)? error,
+  }) {
+    return success?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(bool data)? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Success implements IsCheckedinState {
+  const factory _Success(final bool data) = _$SuccessImpl;
+
+  bool get data;
+  @JsonKey(ignore: true)
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -658,7 +734,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$UpdateUserRegisterFaceStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$IsCheckedinStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -688,7 +764,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'UpdateUserRegisterFaceState.error(message: $message)';
+    return 'IsCheckedinState.error(message: $message)';
   }
 
   @override
@@ -713,8 +789,8 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(bool data) success,
     required TResult Function(String message) error,
-    required TResult Function(UserResponseModel user) success,
   }) {
     return error(message);
   }
@@ -724,8 +800,8 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(bool data)? success,
     TResult? Function(String message)? error,
-    TResult? Function(UserResponseModel user)? success,
   }) {
     return error?.call(message);
   }
@@ -735,8 +811,8 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(bool data)? success,
     TResult Function(String message)? error,
-    TResult Function(UserResponseModel user)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -750,8 +826,8 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
     required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
     return error(this);
   }
@@ -761,8 +837,8 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
     TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
   }
@@ -772,8 +848,8 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
     TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -783,156 +859,11 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements UpdateUserRegisterFaceState {
+abstract class _Error implements IsCheckedinState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({UserResponseModel user});
-}
-
-/// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$UpdateUserRegisterFaceStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = null,
-  }) {
-    return _then(_$SuccessImpl(
-      null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as UserResponseModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.user);
-
-  @override
-  final UserResponseModel user;
-
-  @override
-  String toString() {
-    return 'UpdateUserRegisterFaceState.success(user: $user)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, user);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) error,
-    required TResult Function(UserResponseModel user) success,
-  }) {
-    return success(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? error,
-    TResult? Function(UserResponseModel user)? success,
-  }) {
-    return success?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-    TResult Function(UserResponseModel user)? success,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Success value) success,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Success value)? success,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Success value)? success,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Success implements UpdateUserRegisterFaceState {
-  const factory _Success(final UserResponseModel user) = _$SuccessImpl;
-
-  UserResponseModel get user;
-  @JsonKey(ignore: true)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

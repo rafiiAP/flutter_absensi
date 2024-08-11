@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_absensi/functions/func.dart';
+import 'package:flutter_absensi/presentation/home/pages/location_page.dart';
 import 'package:flutter_absensi/presentation/home/pages/register_face_attendance_page.dart';
+import 'package:detect_fake_location/detect_fake_location.dart';
 
 import '../../../core/core.dart';
 import '../../../data/datasource/auth_local_datasource.dart';
 import '../widgets/menu_button.dart';
-import 'attendance_page.dart';
+import 'attendance_checkin_page.dart';
+import 'attendance_checkout_page.dart';
 import 'setting_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -68,15 +71,24 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   const SpaceWidth(12.0),
-                  const Expanded(
-                    child: Text(
-                      'Hello, Chopper Sensei',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                        color: AppColors.white,
-                      ),
-                      maxLines: 2,
-                    ),
+                  FutureBuilder(
+                    future: AuthLocalDatasource().getAuthData(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Text('Loading...');
+                      } else {
+                        return Expanded(
+                          child: Text(
+                            'Hello, ${snapshot.data?.user?.name}',
+                            style: const TextStyle(
+                              fontSize: 18.0,
+                              color: AppColors.white,
+                            ),
+                            maxLines: 2,
+                          ),
+                        );
+                      }
+                    },
                   ),
                   IconButton(
                     onPressed: () {},
@@ -144,12 +156,66 @@ class _HomePageState extends State<HomePage> {
                     MenuButton(
                       label: 'Datang',
                       iconPath: Assets.icons.menu.datang.path,
-                      onPressed: () {},
+                      onPressed: () async {
+                        // Deteksi lokasi palsu
+                        bool isFakeLocation = await DetectFakeLocation().detectFakeLocation();
+                        // Jika lokasi palsu terdeteksi
+                        if (isFakeLocation) {
+                          // Tampilkan peringatan lokasi palsu
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: const Text('Fake Location Detected'),
+                                content: const Text('Please disable fake location to proceed.'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    child: const Text('OK'),
+                                    onPressed: () {
+                                      Navigator.of(context).pop(); // Tutup dialog
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        } else {
+                          // masuk page checkin
+                          context.push(const AttendanceCheckinPage());
+                        }
+                      },
                     ),
                     MenuButton(
                       label: 'Pulang',
                       iconPath: Assets.icons.menu.pulang.path,
-                      onPressed: () {},
+                      onPressed: () async {
+                        // Deteksi lokasi palsu
+                        bool isFakeLocation = await DetectFakeLocation().detectFakeLocation();
+                        // Jika lokasi palsu terdeteksi
+                        if (isFakeLocation) {
+                          // Tampilkan peringatan lokasi palsu
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: const Text('Fake Location Detected'),
+                                content: const Text('Please disable fake location to proceed.'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    child: const Text('OK'),
+                                    onPressed: () {
+                                      Navigator.of(context).pop(); // Tutup dialog
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        } else {
+                          // masuk page checkin
+                          context.push(const AttendanceCheckoutPage());
+                        }
+                      },
                     ),
                     MenuButton(
                       label: 'Izin',
