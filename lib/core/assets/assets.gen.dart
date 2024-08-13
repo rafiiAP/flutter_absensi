@@ -8,32 +8,32 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vector_graphics/vector_graphics.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/attendance.svg
-  SvgGenImage get attendance =>
-      const SvgGenImage('assets/icons/attendance.svg');
+  SvgGenImage get attendance => const SvgGenImage('assets/icons/attendance.svg');
 
   /// File path: assets/icons/back.svg
   SvgGenImage get back => const SvgGenImage('assets/icons/back.svg');
 
+  /// File path: assets/icons/calendar.svg
+  SvgGenImage get calendar => const SvgGenImage('assets/icons/calendar.svg');
+
   /// File path: assets/icons/email.svg
   SvgGenImage get email => const SvgGenImage('assets/icons/email.svg');
 
-  /// Directory path: assets/icons/menu
-  $AssetsIconsMenuGen get menu => const $AssetsIconsMenuGen();
+  /// File path: assets/icons/image.svg
+  SvgGenImage get image => const SvgGenImage('assets/icons/image.svg');
 
-  /// Directory path: assets/icons/nav
+  $AssetsIconsMenuGen get menu => const $AssetsIconsMenuGen();
   $AssetsIconsNavGen get nav => const $AssetsIconsNavGen();
 
   /// File path: assets/icons/notification_rounded.svg
-  SvgGenImage get notificationRounded =>
-      const SvgGenImage('assets/icons/notification_rounded.svg');
+  SvgGenImage get notificationRounded => const SvgGenImage('assets/icons/notification_rounded.svg');
 
   /// File path: assets/icons/password.svg
   SvgGenImage get password => const SvgGenImage('assets/icons/password.svg');
@@ -42,8 +42,7 @@ class $AssetsIconsGen {
   SvgGenImage get reverse => const SvgGenImage('assets/icons/reverse.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [attendance, back, email, notificationRounded, password, reverse];
+  List<SvgGenImage> get values => [attendance, back, calendar, email, image, notificationRounded, password, reverse];
 }
 
 class $AssetsImagesGen {
@@ -56,38 +55,26 @@ class $AssetsImagesGen {
   AssetGenImage get failed => const AssetGenImage('assets/images/failed.png');
 
   /// File path: assets/images/img_my_location.png
-  AssetGenImage get imgMyLocation =>
-      const AssetGenImage('assets/images/img_my_location.png');
+  AssetGenImage get imgMyLocation => const AssetGenImage('assets/images/img_my_location.png');
 
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// File path: assets/images/logo_code_with_bahri.png
-  AssetGenImage get logoCodeWithBahri =>
-      const AssetGenImage('assets/images/logo_code_with_bahri.png');
+  AssetGenImage get logoCodeWithBahri => const AssetGenImage('assets/images/logo_code_with_bahri.png');
 
   /// File path: assets/images/logo_white.png
-  AssetGenImage get logoWhite =>
-      const AssetGenImage('assets/images/logo_white.png');
+  AssetGenImage get logoWhite => const AssetGenImage('assets/images/logo_white.png');
 
   /// File path: assets/images/see_location.png
-  AssetGenImage get seeLocation =>
-      const AssetGenImage('assets/images/see_location.png');
+  AssetGenImage get seeLocation => const AssetGenImage('assets/images/see_location.png');
 
   /// File path: assets/images/success.png
   AssetGenImage get success => const AssetGenImage('assets/images/success.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-        bgHome,
-        failed,
-        imgMyLocation,
-        logo,
-        logoCodeWithBahri,
-        logoWhite,
-        seeLocation,
-        success
-      ];
+  List<AssetGenImage> get values =>
+      [bgHome, failed, imgMyLocation, logo, logoCodeWithBahri, logoWhite, seeLocation, success];
 }
 
 class $AssetsIconsMenuGen {
@@ -112,8 +99,7 @@ class $AssetsIconsMenuGen {
   SvgGenImage get pulang => const SvgGenImage('assets/icons/menu/pulang.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [catatan, datang, izin, jadwal, lembur, pulang];
+  List<SvgGenImage> get values => [catatan, datang, izin, jadwal, lembur, pulang];
 }
 
 class $AssetsIconsNavGen {
@@ -147,16 +133,9 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName);
 
   final String _assetName;
-
-  final Size? size;
-  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -228,22 +207,9 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = false;
-
-  const SvgGenImage.vec(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = true;
+  const SvgGenImage(this._assetName);
 
   final String _assetName;
-  final Size? size;
-  final Set<String> flavors;
-  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -258,32 +224,19 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme? theme,
+    SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    final BytesLoader loader;
-    if (_isVecFormat) {
-      loader = AssetBytesLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-      );
-    } else {
-      loader = SvgAssetLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-        theme: theme,
-      );
-    }
-    return SvgPicture(
-      loader,
+    return SvgPicture.asset(
+      _assetName,
       key: key,
       matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -292,8 +245,10 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

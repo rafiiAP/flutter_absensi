@@ -36,7 +36,7 @@ class AttendanceRemoteDatasource {
     }
   }
 
-  Future<Either<String, bool>> isCheckedin() async {
+  Future<Either<String, (bool, bool)>> isCheckedin() async {
     final authData = await AuthLocalDatasource().getAuthData();
     final url = Uri.parse('${Variables.baseUrl}/api/is-checkin');
 
@@ -55,7 +55,7 @@ class AttendanceRemoteDatasource {
 
     if (response.statusCode == 200) {
       final responseData = jsonDecode(response.body);
-      return Right(responseData['checkedin'] as bool);
+      return Right((responseData['checkedin'] as bool, responseData['checkedout'] as bool));
     } else {
       return const Left('Failed to get checkedin status');
     }
