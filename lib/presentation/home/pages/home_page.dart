@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_absensi/core/helper/radius_calculate.dart';
+import 'package:flutter_absensi/functions/func.dart';
 import 'package:flutter_absensi/presentation/home/pages/attendance_checkin_page.dart';
 import 'package:flutter_absensi/presentation/home/pages/attendance_checkout_page.dart';
 import 'package:flutter_absensi/presentation/home/pages/register_face_attendance_page.dart';
@@ -138,14 +139,6 @@ class _HomePageState extends State<HomePage> {
                           );
                         }
                       },
-                      // child: Text(
-                      //   'Hello, Chopper Sensei',
-                      //   style: TextStyle(
-                      //     fontSize: 18.0,
-                      //     color: AppColors.white,
-                      //   ),
-                      //   maxLines: 2,
-                      // ),
                     ),
                   ),
                   IconButton(
@@ -226,6 +219,8 @@ class _HomePageState extends State<HomePage> {
                           orElse: () => 0.0,
                           success: (data) => double.parse(data.radiusKm!),
                         );
+
+                        C.showLog('--latitude = $latitudePoint longitude = $longitudePoint radius = $radiusPoint');
                         return BlocConsumer<IsCheckedinBloc, IsCheckedinState>(
                           listener: (context, state) {
                             //
@@ -240,6 +235,22 @@ class _HomePageState extends State<HomePage> {
                               label: 'Datang',
                               iconPath: Assets.icons.menu.datang.path,
                               onPressed: () async {
+                                C.showLog('--latitude: $latitude longitude: $longitude');
+
+                                final distanceKm = RadiusCalculate.calculateDistance(
+                                    latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
+
+                                C.showLog('--distanceKm:  $distanceKm, radiusPoint: $radiusPoint');
+
+                                if (distanceKm > radiusPoint) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Anda diluar jangkauan absen'),
+                                      backgroundColor: AppColors.red,
+                                    ),
+                                  );
+                                  return;
+                                }
                                 if (isCheckin) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
@@ -285,20 +296,20 @@ class _HomePageState extends State<HomePage> {
                               label: 'Pulang',
                               iconPath: Assets.icons.menu.pulang.path,
                               onPressed: () async {
-                                // final distanceKm = RadiusCalculate.calculateDistance(
-                                //     latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
+                                final distanceKm = RadiusCalculate.calculateDistance(
+                                    latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
 
-                                // print('jarak radius:  $distanceKm');
+                                print('jarak radius:  $distanceKm');
 
-                                // if (distanceKm > radiusPoint) {
-                                //   ScaffoldMessenger.of(context).showSnackBar(
-                                //     const SnackBar(
-                                //       content: Text('Anda diluar jangkauan absen'),
-                                //       backgroundColor: AppColors.red,
-                                //     ),
-                                //   );
-                                //   return;
-                                // }
+                                if (distanceKm > radiusPoint) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Anda diluar jangkauan absen'),
+                                      backgroundColor: AppColors.red,
+                                    ),
+                                  );
+                                  return;
+                                }
                                 if (!isCheckIn) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
@@ -316,37 +327,6 @@ class _HomePageState extends State<HomePage> {
                                 } else {
                                   context.push(const AttendanceCheckoutPage());
                                 }
-                                // Deteksi lokasi palsu
-                                // bool isFakeLocation =
-                                //     await DetectFakeLocation().detectFakeLocation();
-                                // bool isFakeLocation =
-                                false; //await SafeDevice.isMockLocation;
-                                // Jika lokasi palsu terdeteksi
-                                // if (isFakeLocation) {
-                                //   // Tampilkan peringatan lokasi palsu
-                                //   showDialog(
-                                //     context: context,
-                                //     builder: (BuildContext context) {
-                                //       return AlertDialog(
-                                //         title: const Text('Fake Location Detected'),
-                                //         content: const Text(
-                                //             'Please disable fake location to proceed.'),
-                                //         actions: <Widget>[
-                                //           TextButton(
-                                //             child: const Text('OK'),
-                                //             onPressed: () {
-                                //               Navigator.of(context)
-                                //                   .pop(); // Tutup dialog
-                                //             },
-                                //           ),
-                                //         ],
-                                //       );
-                                //     },
-                                //   );
-                                // } else {
-                                //   // masuk page checkin
-                                //   context.push(const AttendanceCheckoutPage());
-                                // }
                               },
                             );
                           },
