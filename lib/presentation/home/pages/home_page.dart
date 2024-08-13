@@ -240,53 +240,6 @@ class _HomePageState extends State<HomePage> {
                               label: 'Datang',
                               iconPath: Assets.icons.menu.datang.path,
                               onPressed: () async {
-                                // Deteksi lokasi palsu
-                                // bool isFakeLocation =
-                                //     await DetectFakeLocation().detectFakeLocation();
-                                // bool isFakeLocation =
-                                //     (await Antifakegps().detectFakeLocation())!;
-                                // bool isFakeLocation =
-                                false; //await SafeDevice.isMockLocation;
-                                // Jika lokasi palsu terdeteksi
-                                // if (isFakeLocation) {
-                                //   // Tampilkan peringatan lokasi palsu
-                                //   showDialog(
-                                //     context: context,
-                                //     builder: (BuildContext context) {
-                                //       return AlertDialog(
-                                //         title: const Text('Fake Location Detected'),
-                                //         content: const Text(
-                                //             'Please disable fake location to proceed.'),
-                                //         actions: <Widget>[
-                                //           TextButton(
-                                //             child: const Text('OK'),
-                                //             onPressed: () {
-                                //               Navigator.of(context)
-                                //                   .pop(); // Tutup dialog
-                                //             },
-                                //           ),
-                                //         ],
-                                //       );
-                                //     },
-                                //   );
-                                // } else {
-                                // masuk page checkin
-
-                                final distanceKm = RadiusCalculate.calculateDistance(
-                                    latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
-
-                                print('jarak radius:  $distanceKm');
-
-                                if (distanceKm > radiusPoint) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text('Anda diluar jangkauan absen'),
-                                      backgroundColor: AppColors.red,
-                                    ),
-                                  );
-                                  return;
-                                }
-
                                 if (isCheckin) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
@@ -297,8 +250,6 @@ class _HomePageState extends State<HomePage> {
                                 } else {
                                   context.push(const AttendanceCheckinPage());
                                 }
-
-                                // }
                               },
                             );
                           },
@@ -334,20 +285,20 @@ class _HomePageState extends State<HomePage> {
                               label: 'Pulang',
                               iconPath: Assets.icons.menu.pulang.path,
                               onPressed: () async {
-                                final distanceKm = RadiusCalculate.calculateDistance(
-                                    latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
+                                // final distanceKm = RadiusCalculate.calculateDistance(
+                                //     latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
 
-                                print('jarak radius:  $distanceKm');
+                                // print('jarak radius:  $distanceKm');
 
-                                if (distanceKm > radiusPoint) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text('Anda diluar jangkauan absen'),
-                                      backgroundColor: AppColors.red,
-                                    ),
-                                  );
-                                  return;
-                                }
+                                // if (distanceKm > radiusPoint) {
+                                //   ScaffoldMessenger.of(context).showSnackBar(
+                                //     const SnackBar(
+                                //       content: Text('Anda diluar jangkauan absen'),
+                                //       backgroundColor: AppColors.red,
+                                //     ),
+                                //   );
+                                //   return;
+                                // }
                                 if (!isCheckIn) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
