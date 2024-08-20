@@ -404,8 +404,6 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   );
                                 }
-
-                                // context.push(const SettingPage());
                               },
                               label: 'Attendance Using Face ID',
                               icon: Assets.icons.attendance.svg(),

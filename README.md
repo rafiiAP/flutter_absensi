@@ -4,13 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# FIREBASE
+Platform  Firebase App Id
+web       1:514965984109:web:00ce9ba9fb5274d1134064
+android   1:514965984109:android:54bd20845f821bfe134064
+ios       1:514965984109:ios:5e1b1b350a885d07134064
+macos     1:514965984109:ios:5e1b1b350a885d07134064
+windows   1:514965984109:web:5068c017d7518403134064

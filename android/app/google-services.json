@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "514965984109",
+    "project_id": "flutter-absensi-780b5",
+    "storage_bucket": "flutter-absensi-780b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514965984109:android:54bd20845f821bfe134064",
+        "android_client_info": {
+          "package_name": "com.example.flutter_absensi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcB2D3E3oelnkF1fVxrS7srwl0GgwWBkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
