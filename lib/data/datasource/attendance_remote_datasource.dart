@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
+import 'package:flutter_absensi/data/models/response/attendance_response_model.dart';
 import 'package:flutter_absensi/functions/func.dart';
 
 import 'package:http/http.dart' as http;
@@ -108,6 +109,28 @@ class AttendanceRemoteDatasource {
       return Right(CheckInOutResponseModel.fromJson(response.body));
     } else {
       return const Left('Failed to checkout');
+    }
+  }
+
+  Future<Either<String, AttendanceResponseModel>> getAttendance(String date) async {
+    final authData = await AuthLocalDatasource().getAuthData();
+    final url = Uri.parse('${Variables.baseUrl}/api/api-attendances?date=$date');
+    C.showLog('---> request checkout: $url');
+
+    final response = await http.get(
+      url,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${authData?.token}',
+      },
+    );
+    C.showLog('---> response checkout: ${response.body}');
+
+    if (response.statusCode == 200) {
+      return Right(AttendanceResponseModel.fromJson(response.body));
+    } else {
+      return const Left('Failed to get attendance');
     }
   }
 }

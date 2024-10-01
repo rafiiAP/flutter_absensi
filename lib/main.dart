@@ -6,6 +6,7 @@ import 'package:flutter_absensi/data/style/style.dart';
 import 'package:flutter_absensi/firebase_options.dart';
 import 'package:flutter_absensi/presentation/auth/bloc/logout/logout_bloc.dart';
 import 'package:flutter_absensi/presentation/home/bloc/add_permission/add_permission_bloc.dart';
+import 'package:flutter_absensi/presentation/home/bloc/bloc/get_attendance_by_date_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'data/datasource/attendance_remote_datasource.dart';
@@ -59,7 +60,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AddPermissionBloc(PermissonRemoteDatasource()),
-        )
+        ),
+        BlocProvider(
+          create: (context) => GetAttendanceByDateBloc(AttendanceRemoteDatasource()),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

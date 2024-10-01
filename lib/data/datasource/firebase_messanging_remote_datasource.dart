@@ -30,13 +30,13 @@ class FirebaseMessangingRemoteDatasource {
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse: (NotificationResponse notificationResponse) async {});
 
-    final fcmToken = await _firebaseMessaging.getToken();
+    // final fcmToken = await _firebaseMessaging.getToken();
 
-    C.showLog('-->FCM Token: $fcmToken');
+    // C.showLog('-->FCM Token: $fcmToken');
 
-    if (await AuthLocalDatasource().getAuthData() != null) {
-      AuthRemoteDatasource().updateFcmToken(fcmToken!);
-    }
+    // if (await AuthLocalDatasource().getAuthData() != null) {
+    //   AuthRemoteDatasource().updateFcmToken(fcmToken!);
+    // }
 
     FirebaseMessaging.instance.getInitialMessage();
     FirebaseMessaging.onMessage.listen((message) {

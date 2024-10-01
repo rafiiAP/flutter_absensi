@@ -6,6 +6,7 @@ import 'package:flutter_absensi/presentation/home/pages/attendance_checkin_page.
 import 'package:flutter_absensi/presentation/home/pages/attendance_checkout_page.dart';
 import 'package:flutter_absensi/presentation/home/pages/register_face_attendance_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
 // import 'package:safe_device/safe_device.dart';
 
@@ -238,9 +239,25 @@ class _HomePageState extends State<HomePage> {
                                 C.showLog('--latitude: $latitude longitude: $longitude');
 
                                 final distanceKm = RadiusCalculate.calculateDistance(
-                                    latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
+                                  latitude ?? 0.0,
+                                  longitude ?? 0.0,
+                                  latitudePoint,
+                                  longitudePoint,
+                                );
 
                                 C.showLog('--distanceKm:  $distanceKm, radiusPoint: $radiusPoint');
+
+                                final position = await Geolocator.getCurrentPosition();
+
+                                if (position.isMocked) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Anda menggunakan lokasi palsu'),
+                                      backgroundColor: AppColors.red,
+                                    ),
+                                  );
+                                  return;
+                                }
 
                                 if (distanceKm > radiusPoint) {
                                   ScaffoldMessenger.of(context).showSnackBar(
@@ -300,6 +317,18 @@ class _HomePageState extends State<HomePage> {
                                     latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
 
                                 print('jarak radius:  $distanceKm');
+
+                                final position = await Geolocator.getCurrentPosition();
+
+                                if (position.isMocked) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Anda menggunakan lokasi palsu'),
+                                      backgroundColor: AppColors.red,
+                                    ),
+                                  );
+                                  return;
+                                }
 
                                 if (distanceKm > radiusPoint) {
                                   ScaffoldMessenger.of(context).showSnackBar(
@@ -376,11 +405,23 @@ class _HomePageState extends State<HomePage> {
                               success: (data) => double.parse(data.radiusKm!),
                             );
                             return Button.filled(
-                              onPressed: () {
+                              onPressed: () async {
                                 final distanceKm = RadiusCalculate.calculateDistance(
                                     latitude ?? 0.0, longitude ?? 0.0, latitudePoint, longitudePoint);
 
                                 print('jarak radius:  $distanceKm');
+
+                                final position = await Geolocator.getCurrentPosition();
+
+                                if (position.isMocked) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Anda menggunakan lokasi palsu'),
+                                      backgroundColor: AppColors.red,
+                                    ),
+                                  );
+                                  return;
+                                }
 
                                 if (distanceKm > radiusPoint) {
                                   ScaffoldMessenger.of(context).showSnackBar(
